@@ -7,10 +7,15 @@ export default function Home() {
   return (
     <main className="vintage-bg vintage-font">
       <header className="header">
-        <h1>RAHIM HAMZA</h1>
-        <p>
-          45 Lomond Lane, Kitchener | 548-577-1744 | <a href="mailto:raimu456@me.com">raimu456@me.com</a> | <a href="https://www.linkedin.com/in/abdulrahim">LinkedIn</a>
-        </p>
+        <div className="header-content">
+          <img src="/profile-photo.svg" alt="Rahim Hamza Profile Photo" className="profile-photo" />
+          <div className="header-text">
+            <h1>RAHIM HAMZA</h1>
+            <p>
+              45 Lomond Lane, Kitchener | 548-577-1744 | <a href="mailto:raimu456@me.com">raimu456@me.com</a> | <a href="https://www.linkedin.com/in/abdulrahim">LinkedIn</a>
+            </p>
+          </div>
+        </div>
       </header>
       <section className="objective">
         <h2>Objective</h2>
