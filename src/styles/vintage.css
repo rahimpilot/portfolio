@@ -38,6 +38,23 @@ header {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
 }
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #7c5e3c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.header-text {
+  flex: 1;
+}
 .header h1 {
   font-family: 'Georgia', serif;
   font-size: 2.5rem;
@@ -47,6 +64,16 @@ header {
 .header a {
   color: #7c5e3c;
   text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
 }
 section {
   margin-bottom: 2rem;

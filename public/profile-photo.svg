@@ -1,0 +1,13 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="100" fill="#bfa76f"/>
+  
+  <!-- Head -->
+  <circle cx="100" cy="80" r="30" fill="#7c5e3c"/>
+  
+  <!-- Body -->
+  <path d="M 70 110 Q 70 140 50 160 L 150 160 Q 130 140 130 110 Z" fill="#7c5e3c"/>
+  
+  <!-- Text placeholder -->
+  <text x="100" y="185" font-family="Georgia, serif" font-size="14" fill="#2d2d2d" text-anchor="middle">PROFILE PHOTO</text>
+</svg>
