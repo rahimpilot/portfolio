@@ -6,9 +6,6 @@ import '../styles/modern.css';
 const Header: React.FC = () => {
     return (
         <header className="header">
-            <div className="branding">
-                <h1>Vintage Modern Portfolio</h1>
-            </div>
             <nav className="navigation">
                 <ul>
                     <li><Link to="/">Home</Link></li>
