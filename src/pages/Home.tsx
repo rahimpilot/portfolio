@@ -1,269 +1,203 @@
 import React from "react";
-// import "../styles/vintage.css";
 import SkillBar from "../components/SkillBar";
 import ContactForm from "../components/ContactForm";
 
 export default function Home() {
   return (
-    <>
-      <main className="min-h-screen bg-gray-900 text-green-400 font-mono">
-        {/* Terminal-style Header */}
-        <div className="bg-black border-b border-green-500 p-4">
-          <div className="flex items-center space-x-2 text-sm">
-            <div className="flex space-x-1">
-              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            </div>
-            <span className="text-gray-400">rahim@terminal:~$</span>
-          </div>
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 font-sans">
+      <header className="flex flex-col items-center py-10 bg-white shadow-md rounded-b-3xl mb-8">
+        <h1 className="text-4xl font-bold text-blue-900 mb-2 tracking-tight">RAHIM HAMZA</h1>
+        <p className="text-lg text-gray-700">
+          Technical Support Specialist | 16+ Years Experience
+        </p>
+        <div className="mt-4 text-center">
+          <p className="text-gray-600">
+            📍 Kitchener, Ontario | 📞 548-577-1744
+          </p>
+          <p className="text-gray-600">
+            ✉️ <a className="text-blue-600 underline hover:text-blue-800" href="mailto:raimu456@me.com">raimu456@me.com</a> | 
+            🔗 <a className="text-blue-600 underline hover:text-blue-800" href="https://www.linkedin.com/in/abdulrahim">LinkedIn</a>
+          </p>
         </div>
+      </header>
 
-        {/* Hero Section - Terminal Style */}
-        <div className="bg-black text-green-400 p-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="mb-4">
-              <span className="text-gray-500">rahim@system:~$ </span>
-              <span className="text-green-400">whoami</span>
-            </div>
-            <div className="text-4xl md:text-6xl font-bold mb-4 text-green-300 glow">
-              RAHIM_HAMZA.exe
-            </div>
-            <div className="text-lg mb-6">
-              <span className="text-gray-500">$ </span>
-              <span className="text-cyan-400">cat profile.txt</span>
-            </div>
-            <div className="bg-gray-800 border border-green-500 rounded p-6 mb-6 shadow-lg shadow-green-500/20">
-              <div className="space-y-2 text-green-300">
-                <div><span className="text-cyan-400">Role:</span> Technical Support Specialist</div>
-                <div><span className="text-cyan-400">Location:</span> Kitchener, Ontario</div>
-                <div><span className="text-cyan-400">Experience:</span> 16+ years</div>
-                <div><span className="text-cyan-400">Status:</span> <span className="text-green-400 animate-pulse">● AVAILABLE</span></div>
-                <div><span className="text-cyan-400">Contact:</span> 
-                  <a href="mailto:raimu456@me.com" className="text-blue-400 hover:text-blue-300 glow-blue"> raimu456@me.com</a> | 
-                  <a href="https://www.linkedin.com/in/abdulrahim" className="text-blue-400 hover:text-blue-300 glow-blue"> LinkedIn</a>
-                </div>
-              </div>
-            </div>
-            <div className="text-gray-300">
-              <span className="text-gray-500">$ </span>
-              <span className="text-yellow-400">echo "Specializing in troubleshooting, customer service, and technical excellence"</span>
-            </div>
+      <div className="max-w-6xl mx-auto px-6 pb-8">
+        {/* Mission Statement */}
+        <section className="mb-10">
+          <h2 className="text-3xl font-semibold text-blue-800 mb-4">Mission</h2>
+          <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500">
+            <p className="text-gray-700 text-lg leading-relaxed">
+              Delivering exceptional technical support through systematic problem-solving, leveraging 16+ years of experience to provide scalable customer solutions and drive operational excellence in fast-paced environments.
+            </p>
           </div>
-        </div>
-        {/* Mission Statement - Code Block Style */}
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <div className="mb-8">
-            <div className="text-lg mb-4">
-              <span className="text-gray-500">$ </span>
-              <span className="text-cyan-400">cat mission.sh</span>
-            </div>
-            <div className="bg-gray-800 border border-cyan-500 rounded-lg p-6 shadow-lg shadow-cyan-500/20">
-              <div className="text-gray-300">
-                <span className="text-purple-400">#!/bin/bash</span><br/>
-                <span className="text-green-400"># Mission: Technical Excellence</span><br/>
-                <span className="text-yellow-400">function</span> <span className="text-blue-400">mission</span>() {`{`}<br/>
-                <span className="ml-4 text-gray-200">
-                  echo "Delivering exceptional technical support through systematic problem-solving,"<br/>
-                  echo "leveraging 16+ years of experience to provide scalable customer solutions"<br/>
-                  echo "and drive operational excellence in fast-paced environments."
-                </span><br/>
-                {`}`}<br/>
-                <span className="text-yellow-400">mission</span>
-              </div>
-            </div>
-          </div>
-          {/* Experience Section - Terminal Log Style */}
-          <div className="mb-8">
-            <div className="text-lg mb-4">
-              <span className="text-gray-500">$ </span>
-              <span className="text-cyan-400">tail -f career.log</span>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-gray-800 border-l-4 border-green-500 rounded p-6 shadow-lg glow-border">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-green-300">[CURRENT] Technical Customer Service</h3>
-                    <p className="text-cyan-400">OPENLANE Canada</p>
-                  </div>
-                  <span className="text-yellow-400 text-sm">Oct 2024 – Present</span>
-                </div>
-                <div className="text-gray-300 space-y-1">
-                  <div><span className="text-green-400">●</span> Multi-channel technical support (chat, phone, email)</div>
-                  <div><span className="text-green-400">●</span> Website troubleshooting & problem resolution</div>
-                  <div><span className="text-green-400">●</span> Salesforce system integration & documentation</div>
-                  <div><span className="text-green-400">●</span> Cross-team collaboration for complex issues</div>
-                  <div><span className="text-green-400">●</span> Pattern analysis & solution optimization</div>
-                </div>
-              </div>
-              <div className="bg-gray-800 border-l-4 border-cyan-500 rounded p-6 shadow-lg glow-border">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-cyan-300">Customer Service Associate</h3>
-                    <p className="text-blue-400">Tech Mahindra, Canada</p>
-                  </div>
-                  <span className="text-yellow-400 text-sm">Nov 2023 – Sep 2024</span>
-                </div>
-                <div className="text-gray-300 space-y-1">
-                  <div><span className="text-cyan-400">●</span> Network connectivity troubleshooting & resolution</div>
-                  <div><span className="text-cyan-400">●</span> Service configuration & customer plan management</div>
-                  <div><span className="text-cyan-400">●</span> Performance monitoring & outage response</div>
-                  <div><span className="text-cyan-400">●</span> Ticketing system automation & case routing</div>
-                  <div><span className="text-cyan-400">●</span> Self-service portal guidance & escalation protocols</div>
-                </div>
-              </div>
+        </section>
 
-              <div className="bg-gray-800 border-l-4 border-purple-500 rounded p-6 shadow-lg glow-border">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-purple-300">IT Service Desk Analyst</h3>
-                    <p className="text-blue-400">Accenture, India</p>
-                  </div>
-                  <span className="text-yellow-400 text-sm">Nov 2011 – Aug 2012</span>
+        {/* Professional Experience */}
+        <section className="mb-10">
+          <h2 className="text-3xl font-semibold text-blue-800 mb-6">Professional Experience</h2>
+          <div className="grid gap-6 lg:grid-cols-2">
+            
+            <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">Technical Customer Service</h3>
+                  <p className="text-blue-600 font-semibold">OPENLANE Canada</p>
                 </div>
-                <div className="text-gray-300 space-y-1">
-                  <div><span className="text-purple-400">●</span> Multi-channel IT support & incident response</div>
-                  <div><span className="text-purple-400">●</span> Hardware/software diagnostics & network troubleshooting</div>
-                  <div><span className="text-purple-400">●</span> Help desk ticketing & incident lifecycle management</div>
-                  <div><span className="text-purple-400">●</span> Tier escalation protocols & knowledge base contribution</div>
-                  <div><span className="text-purple-400">●</span> Equipment provisioning & user communication</div>
-                </div>
+                <span className="text-sm text-gray-500 bg-green-100 px-2 py-1 rounded">Oct 2024 – Present</span>
               </div>
+              <ul className="text-gray-700 space-y-2">
+                <li>• Multi-channel technical support (chat, phone, email)</li>
+                <li>• Website troubleshooting & problem resolution</li>
+                <li>• Salesforce system integration & documentation</li>
+                <li>• Cross-team collaboration for complex issues</li>
+                <li>• Pattern analysis & solution optimization</li>
+              </ul>
+            </div>
 
-              <div className="bg-gray-800 border-l-4 border-red-500 rounded p-6 shadow-lg glow-border">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-300">Technical Support Advisor</h3>
-                    <p className="text-blue-400">Aditya Birla Minacs - Apple Macintosh Project</p>
-                  </div>
-                  <span className="text-yellow-400 text-sm">Jan 2008 – Feb 2009</span>
+            <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-cyan-500">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">Customer Service Associate</h3>
+                  <p className="text-blue-600 font-semibold">Tech Mahindra, Canada</p>
                 </div>
-                <div className="text-gray-300 space-y-1">
-                  <div><span className="text-red-400">●</span> macOS diagnostic & system recovery operations</div>
-                  <div><span className="text-red-400">●</span> System reinstallation & user environment setup</div>
-                  <div><span className="text-red-400">●</span> Backup/restore procedures & data management</div>
-                  <div><span className="text-red-400">●</span> Software deployment & application troubleshooting</div>
-                  <div><span className="text-red-400">●</span> Network configuration & service center coordination</div>
-                </div>
+                <span className="text-sm text-gray-500 bg-cyan-100 px-2 py-1 rounded">Nov 2023 – Sep 2024</span>
               </div>
+              <ul className="text-gray-700 space-y-2">
+                <li>• Network connectivity troubleshooting & resolution</li>
+                <li>• Service configuration & customer plan management</li>
+                <li>• Performance monitoring & outage response</li>
+                <li>• Ticketing system automation & case routing</li>
+                <li>• Self-service portal guidance & escalation protocols</li>
+              </ul>
             </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">IT Service Desk Analyst</h3>
+                  <p className="text-blue-600 font-semibold">Accenture, India</p>
+                </div>
+                <span className="text-sm text-gray-500 bg-purple-100 px-2 py-1 rounded">Nov 2011 – Aug 2012</span>
+              </div>
+              <ul className="text-gray-700 space-y-2">
+                <li>• Multi-channel IT support & incident response</li>
+                <li>• Hardware/software diagnostics & network troubleshooting</li>
+                <li>• Help desk ticketing & incident lifecycle management</li>
+                <li>• Tier escalation protocols & knowledge base contribution</li>
+                <li>• Equipment provisioning & user communication</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">Technical Support Advisor</h3>
+                  <p className="text-blue-600 font-semibold">Aditya Birla Minacs</p>
+                </div>
+                <span className="text-sm text-gray-500 bg-orange-100 px-2 py-1 rounded">Jan 2008 – Feb 2009</span>
+              </div>
+              <ul className="text-gray-700 space-y-2">
+                <li>• macOS diagnostic & system recovery operations</li>
+                <li>• System reinstallation & user environment setup</li>
+                <li>• Backup/restore procedures & data management</li>
+                <li>• Software deployment & application troubleshooting</li>
+                <li>• Network configuration & service center coordination</li>
+              </ul>
+            </div>
+
           </div>
-          {/* Skills Section - System Monitor Style */}
-          <div className="mb-8">
-            <div className="text-lg mb-4">
-              <span className="text-gray-500">$ </span>
-              <span className="text-cyan-400">htop --skills</span>
-            </div>
-            <div className="bg-black border border-green-500 rounded p-6 shadow-lg shadow-green-500/20">
-              <div className="text-green-400 mb-4">
-                <span className="text-gray-500">Tasks: </span>5 total, <span className="text-green-400">5 active</span>, 0 sleeping
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-green-300">Troubleshooting & Problem Solving</span>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-32 bg-gray-700 rounded">
-                      <div className="bg-green-500 text-xs leading-none py-1 text-center text-black rounded" style={{width: '90%'}}>90%</div>
-                    </div>
-                    <span className="text-yellow-400">EXPERT</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-green-300">Windows/macOS/Linux</span>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-32 bg-gray-700 rounded">
-                      <div className="bg-cyan-500 text-xs leading-none py-1 text-center text-black rounded" style={{width: '85%'}}>85%</div>
-                    </div>
-                    <span className="text-cyan-400">ADVANCED</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-green-300">Networking Fundamentals</span>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-32 bg-gray-700 rounded">
-                      <div className="bg-blue-500 text-xs leading-none py-1 text-center text-white rounded" style={{width: '80%'}}>80%</div>
-                    </div>
-                    <span className="text-blue-400">PROFICIENT</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-green-300">Ticketing Systems</span>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-32 bg-gray-700 rounded">
-                      <div className="bg-purple-500 text-xs leading-none py-1 text-center text-white rounded" style={{width: '75%'}}>75%</div>
-                    </div>
-                    <span className="text-purple-400">SKILLED</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-green-300">Application & Software Support</span>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-32 bg-gray-700 rounded">
-                      <div className="bg-orange-500 text-xs leading-none py-1 text-center text-black rounded" style={{width: '80%'}}>80%</div>
-                    </div>
-                    <span className="text-orange-400">PROFICIENT</span>
-                  </div>
+        </section>
+
+        {/* Skills Section */}
+        <section className="mb-10">
+          <h2 className="text-3xl font-semibold text-blue-800 mb-6">Key Skills & Expertise</h2>
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Technical Skills</h3>
+                <div className="space-y-4">
+                  <SkillBar skill="Troubleshooting & Problem Solving" level={90} />
+                  <SkillBar skill="Windows/macOS/Linux" level={85} />
+                  <SkillBar skill="Networking Fundamentals" level={80} />
+                  <SkillBar skill="Ticketing Systems" level={75} />
+                  <SkillBar skill="Application & Software Support" level={80} />
                 </div>
               </div>
-            </div>
-          </div>
-          {/* Additional Info - Directory Listing Style */}
-          <div className="mb-8">
-            <div className="text-lg mb-4">
-              <span className="text-gray-500">$ </span>
-              <span className="text-cyan-400">ls -la ~/profile/</span>
-            </div>
-            <div className="bg-gray-800 border border-gray-600 rounded p-6">
-              <div className="grid md:grid-cols-3 gap-6 text-sm">
-                <div>
-                  <div className="text-yellow-400 font-bold mb-2">📁 community/</div>
-                  <div className="text-gray-300 space-y-1">
-                    <div>• Dubai Cares & Emirates NBD (7 years)</div>
-                    <div>• FIFA World Cup 2026 Volunteer</div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Core Competencies</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-blue-50 rounded-lg p-3 text-center">
+                    <div className="text-2xl mb-1">🔧</div>
+                    <div className="text-sm font-medium text-blue-800">Technical Support</div>
                   </div>
-                </div>
-                <div>
-                  <div className="text-blue-400 font-bold mb-2">📚 education/</div>
-                  <div className="text-gray-300 space-y-1">
-                    <div>• Bachelor's Degree - Alagappa University</div>
-                    <div>• Higher Secondary - ICA School</div>
-                    <div>• WES Accredited</div>
+                  <div className="bg-green-50 rounded-lg p-3 text-center">
+                    <div className="text-2xl mb-1">🎯</div>
+                    <div className="text-sm font-medium text-green-800">Problem Solving</div>
                   </div>
-                </div>
-                <div>
-                  <div className="text-green-400 font-bold mb-2">🎯 interests/</div>
-                  <div className="text-gray-300 space-y-1">
-                    <div>• Technology Research</div>
-                    <div>• Technical Writing</div>
-                    <div>• Solo Travel</div>
-                    <div>• Cinema</div>
+                  <div className="bg-purple-50 rounded-lg p-3 text-center">
+                    <div className="text-2xl mb-1">📞</div>
+                    <div className="text-sm font-medium text-purple-800">Customer Service</div>
+                  </div>
+                  <div className="bg-orange-50 rounded-lg p-3 text-center">
+                    <div className="text-2xl mb-1">🌐</div>
+                    <div className="text-sm font-medium text-orange-800">Network Support</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {/* Contact Section - Terminal Command */}
-          <div className="mb-8">
-            <div className="text-lg mb-4">
-              <span className="text-gray-500">$ </span>
-              <span className="text-cyan-400">./contact.sh --initiate</span>
+        </section>
+
+        {/* Additional Information */}
+        <section className="mb-10">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <h3 className="text-xl font-semibold text-blue-800 mb-4">🌟 Community</h3>
+              <ul className="text-gray-700 space-y-2">
+                <li>• Dubai Cares & Emirates NBD (7 years)</li>
+                <li>• FIFA World Cup 2026 Volunteer</li>
+              </ul>
             </div>
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <h3 className="text-xl font-semibold text-blue-800 mb-4">🎓 Education</h3>
+              <ul className="text-gray-700 space-y-2">
+                <li>• Bachelor's Degree - Alagappa University</li>
+                <li>• Higher Secondary - ICA School</li>
+                <li>• WES Accredited</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <h3 className="text-xl font-semibold text-blue-800 mb-4">🎯 Interests</h3>
+              <ul className="text-gray-700 space-y-2">
+                <li>• Technology Research</li>
+                <li>• Technical Writing</li>
+                <li>• Solo Travel</li>
+                <li>• Cinema</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="mb-10">
+          <h2 className="text-3xl font-semibold text-blue-800 mb-6 text-center">Let's Connect</h2>
+          <div className="max-w-2xl mx-auto">
             <ContactForm />
           </div>
+        </section>
 
-          {/* Footer - System Info */}
-          <div className="bg-black border-t border-green-500 p-6 text-center">
-            <div className="text-green-400">
-              <span className="text-gray-500">System: </span>RAHIM_PORTFOLIO_v2.0 | 
-              <span className="text-gray-500"> Uptime: </span>{new Date().getFullYear()} | 
-              <span className="text-gray-500"> Status: </span><span className="animate-pulse">ONLINE</span>
-            </div>
-            <div className="text-gray-500 text-sm mt-2">
-              © {new Date().getFullYear()} Rahim Hamza - All systems operational
-            </div>
+        {/* Footer */}
+        <footer className="text-center py-8 border-t border-blue-200">
+          <p className="text-gray-600">
+            © {new Date().getFullYear()} Rahim Hamza - Technical Support Specialist
+          </p>
+          <div className="mt-2 flex justify-center space-x-4 text-sm">
+            <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full">✅ Available for Opportunities</span>
+            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">🚀 Ready to Start</span>
           </div>
-        </div>
-      </main>
-    </>
+        </footer>
+
+      </div>
+    </main>
   );
 }
