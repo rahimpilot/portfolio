@@ -6,7 +6,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import './styles/tailwind.css'; // Tailwind (single source of styles)
+import './styles/tailwind.compiled.css'; // Tailwind (compiled; see build:css script)
 
 const App = () => {
     return (

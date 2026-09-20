@@ -5,7 +5,11 @@
   "main": "src/index.tsx",
   "scripts": {
     "start": "react-scripts start",
+    "prestart": "npm run build:css",
     "build": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "prebuild": "npm run build:css",
+    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/tailwind.compiled.css --minify",
+    "watch:css": "tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/tailwind.compiled.css --watch",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
