@@ -5,8 +5,10 @@
   "env": {
     "NODE_OPTIONS": "--openssl-legacy-provider"
   },
+  "redirects": [
+    { "source": "/", "destination": "/resume.html", "permanent": false }
+  ],
   "rewrites": [
-    { "source": "/", "destination": "/resume.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
