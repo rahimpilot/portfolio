@@ -12,7 +12,7 @@ export default function Home() {
         <div className="absolute -top-32 -right-32 w-[520px] h-[520px] bg-gradient-to-tr from-blue-600 via-indigo-400 to-cyan-400 opacity-30 blur-3xl rounded-full pointer-events-none" />
         <div className="max-w-6xl mx-auto px-6 pt-24 pb-20 relative">
           <div className="max-w-3xl">
-            <p className="inline-flex items-center text-xs tracking-wider font-semibold uppercase bg-blue-50 text-blue-700 px-3 py-1 rounded-full mb-6 border border-blue-100">Technical Support Specialist</p>
+            <p className="inline-flex items-center text-xs tracking-wider font-semibold uppercase bg-blue-50 text-blue-700 px-3 py-1 rounded-full mb-6 border border-blue-100">IT Support Analyst</p>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 mb-8 leading-tight">
               Elevating customer trust through <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">reliable support systems</span>.
             </h1>
@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-slate-200 py-10 text-center text-sm text-slate-500">
-        © {new Date().getFullYear()} Rahim Hamza · Technical Support Specialist
+        © {new Date().getFullYear()} Rahim Hamza · IT Support Analyst
       </footer>
     </main>
   );
