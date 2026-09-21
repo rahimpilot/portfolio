@@ -34,7 +34,7 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-6 -mt-10 mb-20 relative">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { label: 'Platforms Supported', value: 'Windows · macOS · Linux' },
+            { label: 'Platforms Supported', value: 'Windows · macOS' },
             { label: 'Ticketing Systems', value: 'ServiceNow · Jira · Zendesk' },
             { label: 'Networking', value: 'IP · DNS · DHCP' },
             { label: 'Based In', value: 'Kitchener, Canada' }
@@ -103,7 +103,7 @@ export default function Home() {
         <div className="grid gap-10 md:grid-cols-2 items-start">
           <div className="space-y-6">
             <SkillBar skill="Troubleshooting & Problem Solving" level={90} />
-            <SkillBar skill="Windows / macOS / Linux" level={85} />
+            <SkillBar skill="Windows / macOS" level={85} />
             <SkillBar skill="Networking (IP · DNS · DHCP)" level={80} />
             <SkillBar skill="Ticketing (ServiceNow / Jira / Zendesk)" level={80} />
             <SkillBar skill="Microsoft Office & Software Installation" level={80} />
