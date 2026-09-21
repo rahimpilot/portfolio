@@ -11,7 +11,7 @@ const Header: React.FC = () => {
                 </div>
                 <nav>
                     <ul className="flex space-x-8 text-sm font-medium">
-                        <li><Link to="/" className="text-gray-600 hover:text-blue-700 transition-colors">Home</Link></li>
+                        <li><Link to="/" className="text-gray-600 hover:text-blue-700 transition-colors">Resume</Link></li>
                         <li><Link to="/about" className="text-gray-600 hover:text-blue-700 transition-colors">About</Link></li>
                         <li><Link to="/contact" className="text-gray-600 hover:text-blue-700 transition-colors">Contact</Link></li>
                     </ul>

@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#edf3f5" />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Rahim Hamza — IT Support Engineer</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #edf3f5;
+      --paper: #f8fbfc;
+      --panel: #ffffff;
+      --ink: #10242c;
+      --muted: #526a73;
+      --faint: #78909a;
+      --line: #cbd9dd;
+      --line-strong: #a9bec5;
+      --accent: #007c83;
+      --accent-2: #0b5d68;
+      --signal: #d9ff4f;
+      --signal-ink: #263000;
+      --soft-accent: #dff2f2;
+      --shadow: 0 24px 70px rgba(20, 48, 56, .11);
+      --grid: rgba(16, 36, 44, .055);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #081116;
+        --paper: #0d181e;
+        --panel: #122129;
+        --ink: #e8f5f4;
+        --muted: #a9bdc1;
+        --faint: #789197;
+        --line: #283b43;
+        --line-strong: #3d555e;
+        --accent: #59c9cd;
+        --accent-2: #8be0df;
+        --signal: #d9ff4f;
+        --signal-ink: #1f2a00;
+        --soft-accent: #132f35;
+        --shadow: 0 26px 80px rgba(0, 0, 0, .34);
+        --grid: rgba(170, 210, 216, .045);
+      }
+    }
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --bg: #edf3f5;
+      --paper: #f8fbfc;
+      --panel: #ffffff;
+      --ink: #10242c;
+      --muted: #526a73;
+      --faint: #78909a;
+      --line: #cbd9dd;
+      --line-strong: #a9bec5;
+      --accent: #007c83;
+      --accent-2: #0b5d68;
+      --signal: #d9ff4f;
+      --signal-ink: #263000;
+      --soft-accent: #dff2f2;
+      --shadow: 0 24px 70px rgba(20, 48, 56, .11);
+      --grid: rgba(16, 36, 44, .055);
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #081116;
+      --paper: #0d181e;
+      --panel: #122129;
+      --ink: #e8f5f4;
+      --muted: #a9bdc1;
+      --faint: #789197;
+      --line: #283b43;
+      --line-strong: #3d555e;
+      --accent: #59c9cd;
+      --accent-2: #8be0df;
+      --signal: #d9ff4f;
+      --signal-ink: #1f2a00;
+      --soft-accent: #132f35;
+      --shadow: 0 26px 80px rgba(0, 0, 0, .34);
+      --grid: rgba(170, 210, 216, .045);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 0;
+      background:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        var(--bg);
+      background-size: 32px 32px;
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 42px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .topline {
+      height: 6px;
+      background: linear-gradient(90deg, var(--accent) 0 68%, var(--signal) 68% 100%);
+    }
+    .display-tools {
+      min-height: 54px;
+      padding: 9px 18px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel) 72%, transparent);
+    }
+    .theme-switch {
+      display: inline-flex;
+      gap: 3px;
+      padding: 3px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .theme-button {
+      min-height: 36px;
+      border: 0;
+      padding: 7px 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: transparent;
+      color: var(--muted);
+      font: 700 .72rem/1 "IBM Plex Mono", monospace;
+      cursor: pointer;
+      transition: color .18s ease, background .18s ease;
+    }
+    .theme-button svg { width: 15px; height: 15px; stroke: currentColor; }
+    .theme-button[aria-pressed="true"] { background: var(--soft-accent); color: var(--accent-2); }
+    .theme-button:hover { color: var(--ink); }
+    .theme-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .hero {
+      padding: 54px 58px 44px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(250px, .55fr);
+      gap: 52px;
+      align-items: end;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 58px;
+      top: 34px;
+      width: 84px;
+      height: 84px;
+      border-top: 1px solid var(--line-strong);
+      border-right: 1px solid var(--line-strong);
+      pointer-events: none;
+    }
+    .eyebrow, .section-label, .job-date, .mono {
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--accent-2);
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--signal) 24%, transparent);
+      flex: 0 0 auto;
+    }
+    h1 {
+      font-size: clamp(3rem, 7.2vw, 6.6rem);
+      letter-spacing: -.065em;
+      line-height: .88;
+      margin: 0;
+      max-width: 720px;
+      font-weight: 800;
+    }
+    .role {
+      margin: 22px 0 0;
+      font-size: clamp(1.08rem, 2.4vw, 1.65rem);
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .terminal {
+      border-left: 2px solid var(--accent);
+      padding-left: 18px;
+      margin-bottom: 3px;
+    }
+    .terminal p {
+      margin: 0 0 11px;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .76rem;
+      line-height: 1.5;
+    }
+    .terminal p:last-child { margin-bottom: 0; }
+    .terminal .key { color: var(--faint); }
+    .terminal .value { color: var(--ink); font-weight: 500; overflow-wrap: anywhere; }
+    .terminal a.value { text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
+    .terminal a.value:hover, .terminal a.value:focus-visible { color: var(--accent-2); text-decoration-color: currentColor; }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 315px;
+    }
+    .main-col { padding: 48px 58px 60px; min-width: 0; }
+    .side-col {
+      border-left: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel) 62%, transparent);
+      padding: 48px 34px 54px;
+      min-width: 0;
+    }
+    .section { margin-bottom: 52px; }
+    .section:last-child { margin-bottom: 0; }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 26px;
+      font-size: .78rem;
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      font-weight: 600;
+    }
+    .section-label::after { content: ""; height: 1px; background: var(--line); flex: 1; }
+    .summary {
+      margin: 0;
+      max-width: 720px;
+      font-size: 1.06rem;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+    .summary strong { color: var(--ink); font-weight: 700; }
+    .timeline { position: relative; }
+    .job {
+      display: grid;
+      grid-template-columns: 138px minmax(0, 1fr);
+      gap: 26px;
+      padding: 0 0 34px;
+      position: relative;
+    }
+    .job:last-child { padding-bottom: 0; }
+    .job-date {
+      padding-top: 4px;
+      font-size: .72rem;
+      color: var(--faint);
+      line-height: 1.55;
+    }
+    .job-body {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 32px;
+    }
+    .job:last-child .job-body { border-bottom: 0; padding-bottom: 0; }
+    .job-body::before {
+      content: "";
+      position: absolute;
+      left: 128px;
+      top: 8px;
+      width: 7px;
+      height: 7px;
+      background: var(--paper);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+    }
+    .job-body::after {
+      content: "";
+      position: absolute;
+      left: 132px;
+      top: 19px;
+      bottom: 0;
+      width: 1px;
+      background: var(--line);
+    }
+    .job:last-child .job-body::after { display: none; }
+    .job h3 { margin: 0; font-size: 1.18rem; line-height: 1.35; letter-spacing: -.02em; }
+    .company { margin: 4px 0 14px; color: var(--accent-2); font-weight: 700; font-size: .9rem; }
+    .job ul { padding: 0; margin: 0; list-style: none; color: var(--muted); }
+    .job li { position: relative; padding-left: 18px; margin: 8px 0; font-size: .92rem; }
+    .job li::before { content: "/"; position: absolute; left: 0; color: var(--accent); font-family: "IBM Plex Mono", monospace; font-weight: 600; }
+    .side-section { margin-bottom: 38px; }
+    .side-section:last-child { margin-bottom: 0; }
+    .side-title {
+      margin: 0 0 16px;
+      font-size: .76rem;
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--faint);
+      text-transform: uppercase;
+      letter-spacing: .09em;
+    }
+    .skill-stack { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      padding: 7px 10px;
+      background: var(--soft-accent);
+      color: var(--accent-2);
+      border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--line));
+      font-size: .77rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .cap-list, .plain-list { list-style: none; padding: 0; margin: 0; }
+    .cap-list li {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      gap: 10px;
+      align-items: start;
+      margin: 12px 0;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+    .cap-list svg { width: 15px; height: 15px; stroke: var(--accent); margin-top: 4px; }
+    .edu {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .edu:last-child { border-bottom: 0; }
+    .edu strong { display: block; font-size: .87rem; line-height: 1.45; }
+    .edu span { display: block; margin-top: 3px; color: var(--muted); font-size: .79rem; }
+    .links { display: grid; gap: 9px; }
+    .link {
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      font-size: .82rem;
+      font-weight: 700;
+      transition: border-color .2s, background .2s;
+    }
+    .link:hover, .link:focus-visible { border-color: var(--accent); background: var(--soft-accent); outline: none; }
+    .link svg { width: 16px; height: 16px; stroke: var(--accent); flex: 0 0 auto; }
+    .interests { color: var(--muted); font-size: .84rem; line-height: 1.8; }
+    .availability {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 18px;
+      padding: 10px 12px;
+      color: var(--signal-ink);
+      background: var(--signal);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+    .footer-note {
+      border-top: 1px solid var(--line);
+      padding: 18px 58px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--faint);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .68rem;
+    }
+    @media (max-width: 820px) {
+      .page { width: min(100% - 20px, 700px); margin: 10px auto; }
+      .hero { grid-template-columns: 1fr; gap: 34px; padding: 42px 28px 36px; }
+      .hero::after { right: 28px; top: 26px; width: 54px; height: 54px; }
+      .layout { grid-template-columns: 1fr; }
+      .main-col { padding: 38px 28px 46px; }
+      .side-col { border-left: 0; border-top: 1px solid var(--line); padding: 38px 28px 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 30px; }
+      .footer-note { padding: 16px 28px; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 15px; background-size: 24px 24px; }
+      .page { width: 100%; margin: 0; border-left: 0; border-right: 0; }
+      .display-tools { padding: 8px max(14px, env(safe-area-inset-right)) 8px max(14px, env(safe-area-inset-left)); }
+      .theme-switch { width: 100%; }
+      .theme-button { flex: 1; justify-content: center; min-height: 40px; }
+      .hero { padding: 32px max(20px, env(safe-area-inset-right)) 30px max(20px, env(safe-area-inset-left)); gap: 28px; }
+      .hero::after { display: none; }
+      .eyebrow { align-items: flex-start; font-size: .7rem; line-height: 1.55; }
+      h1 { font-size: clamp(2.7rem, 15.5vw, 4.3rem); overflow-wrap: anywhere; }
+      .role { margin-top: 16px; }
+      .terminal { padding-left: 14px; }
+      .terminal p { font-size: .71rem; }
+      .main-col { padding: 34px max(20px, env(safe-area-inset-right)) 42px max(20px, env(safe-area-inset-left)); }
+      .side-col { padding: 34px max(20px, env(safe-area-inset-right)) 40px max(20px, env(safe-area-inset-left)); grid-template-columns: 1fr; }
+      .section { margin-bottom: 42px; }
+      .section-label { margin-bottom: 22px; }
+      .summary { font-size: 1rem; line-height: 1.75; }
+      .job { grid-template-columns: 1fr; gap: 8px; padding-bottom: 30px; }
+      .job-date { padding: 0; color: var(--accent-2); }
+      .job-body::before, .job-body::after { display: none; }
+      .job-body { padding-bottom: 28px; }
+      .job li { font-size: .9rem; }
+      .link { min-height: 46px; }
+      .footer-note { padding: 15px max(20px, env(safe-area-inset-right)) calc(15px + env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); flex-direction: column; gap: 4px; }
+    }
+    @media print {
+      :root, :root[data-theme="dark"], :root[data-theme="light"] {
+        color-scheme: light;
+        --paper: #fff;
+        --panel: #fff;
+        --ink: #111;
+        --muted: #3f5157;
+        --faint: #62777e;
+        --line: #cbd9dd;
+        --accent: #087a80;
+        --accent-2: #0b5d68;
+        --soft-accent: #e7f3f3;
+      }
+      body { background: #fff; color: #111; }
+      .page { width: 100%; margin: 0; border: 0; box-shadow: none; }
+      .topline { background: #087a80; }
+      .display-tools { display: none; }
+      .link { text-decoration: underline; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .link, .theme-button { transition: none; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topline"></div>
+    <div class="display-tools" aria-label="Display preferences">
+      <div class="theme-switch" role="group" aria-label="Choose resume color mode">
+        <button class="theme-button" type="button" data-theme-choice="light" aria-pressed="false" aria-label="Use light mode">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke-width="1.8"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Light
+        </button>
+        <button class="theme-button" type="button" data-theme-choice="dark" aria-pressed="false" aria-label="Use dark mode">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 15.2A8.4 8.4 0 0 1 8.8 4a8.4 8.4 0 1 0 11.2 11.2Z" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Dark
+        </button>
+      </div>
+    </div>
+    <header class="hero">
+      <div>
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>IT support · identity &amp; access · incident response</p>
+        <h1>Rahim<br>Hamza</h1>
+        <p class="role">IT Support Engineer</p>
+      </div>
+      <div class="terminal" aria-label="Contact information">
+        <p><span class="key">location</span> <span class="value">45 Lomond Lane, Kitchener</span></p>
+        <p><span class="key">phone</span> <a class="value" href="tel:+15485771744">548-577-1744</a></p>
+        <p><span class="key">email</span> <a class="value" href="mailto:raimu456@me.com">raimu456@me.com</a></p>
+      </div>
+    </header>
+
+    <div class="layout">
+      <div class="main-col">
+        <section class="section" aria-labelledby="profile-heading">
+          <h2 class="section-label" id="profile-heading">01 / Profile</h2>
+          <p class="summary"><strong>Customer-focused IT support professional with strong communication and problem-solving skills.</strong> Experienced in delivering responsive technical service across fast-paced environments, resolving hardware, software, identity, access and connectivity issues while continually improving the end-user experience.</p>
+        </section>
+
+        <section class="section" id="experience" aria-labelledby="experience-heading">
+          <h2 class="section-label" id="experience-heading">02 / Experience</h2>
+          <div class="timeline">
+            <article class="job">
+              <div class="job-date">OCT 2024<br>— PRESENT</div>
+              <div class="job-body">
+                <h3>IT Support Engineer</h3>
+                <p class="company">OPENLANE Canada</p>
+                <ul>
+                  <li>Administer user access, group policies and identity authentication across Active Directory and Okta, including access provisioning and password resets.</li>
+                  <li>Track, prioritize and resolve high-volume Tier 1 and Tier 2 incidents in ServiceNow while meeting strict SLA turnaround times.</li>
+                  <li>Deliver end-to-end remote support for hardware, software and operating system issues across Windows and macOS.</li>
+                  <li>Diagnose VPN, local Wi-Fi and other network connectivity issues for on-site and remote employees.</li>
+                  <li>Manage account lifecycles, role-based access control and security group memberships to maintain directory accuracy.</li>
+                  <li>Configure and deploy corporate desktops, network printers and peripherals, streamlining onboarding setup.</li>
+                  <li>Onboard corporate mobile devices through MDM enrolment, profile provisioning and carrier SIM activation.</li>
+                  <li>Use remote management tools to resolve critical system bugs and application failures across hybrid teams.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-date">NOV 2023<br>— SEP 2024</div>
+              <div class="job-body">
+                <h3>Customer Service Associate</h3>
+                <p class="company">Tech Mahindra · Canada</p>
+                <ul>
+                  <li>Provided first-line support for internet connectivity issues, troubleshooting routers, modems and other network devices.</li>
+                  <li>Helped customers with price-plan changes, device upgrades and internet service configuration.</li>
+                  <li>Monitored network performance and responded swiftly to outages or disruptions.</li>
+                  <li>Created and routed cases to the back-office team for plan-change errors and missing discounts.</li>
+                  <li>Adapted support to customer tone and provided step-by-step guidance through the telecom self-serve portal.</li>
+                  <li>Escalated chats when necessary and presented eligible financial products and exclusive plans.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-date">NOV 2011<br>— AUG 2012</div>
+              <div class="job-body">
+                <h3>IT Service Desk Analyst</h3>
+                <p class="company">Accenture · India</p>
+                <ul>
+                  <li>Provided immediate IT support by phone, email and in person for hardware, software and network issues.</li>
+                  <li>Logged, tracked and categorized incidents, ensuring timely resolution from password resets to complex software installations.</li>
+                  <li>Escalated unresolved issues to the appropriate tier while keeping users informed.</li>
+                  <li>Set up, configured and maintained IT equipment and software for new and existing employees.</li>
+                  <li>Created and updated knowledge-base documentation for recurring issues.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-date">JAN 2008<br>— FEB 2009</div>
+              <div class="job-body">
+                <h3>Technical Support Advisor · Apple Macintosh Project</h3>
+                <p class="company">Aditya Birla Minacs</p>
+                <ul>
+                  <li>Diagnosed and resolved Mac operating system issues through call support.</li>
+                  <li>Performed operating system reinstalls, user setup, backups, restores and application installations.</li>
+                  <li>Troubleshot OS errors using ASR and Recovery Console, along with LAN and WLAN connectivity issues.</li>
+                  <li>Scheduled Apple Service Centre appointments for hardware support.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side-col" aria-label="Skills, education and links">
+        <section class="side-section">
+          <h2 class="side-title">Technical toolkit</h2>
+          <div class="skill-stack">
+            <span class="chip">Active Directory</span><span class="chip">Okta</span><span class="chip">ServiceNow</span>
+            <span class="chip">MDM</span><span class="chip">Windows</span><span class="chip">macOS</span>
+            <span class="chip">VPN</span><span class="chip">DNS</span><span class="chip">DHCP</span><span class="chip">Jira</span><span class="chip">Zendesk</span><span class="chip">Microsoft Office</span>
+          </div>
+        </section>
+
+        <section class="side-section">
+          <h2 class="side-title">Core capabilities</h2>
+          <ul class="cap-list">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke-width="1.8"/></svg><span>Methodical hardware, software and network troubleshooting</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14v12H8l-3 3V4Z" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Clear, customer-focused technical communication</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tier 1 and Tier 2 incident ownership within SLAs</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Z" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 11h6M9 15h6" stroke-width="1.8" stroke-linecap="round"/></svg><span>Ticket documentation, escalation and knowledge sharing</span></li>
+          </ul>
+        </section>
+
+        <section class="side-section">
+          <h2 class="side-title">Education</h2>
+          <div class="edu"><strong>Bachelor's degree</strong><span>Alagappa University · WES accredited · Jan 2012</span></div>
+          <div class="edu"><strong>Higher Secondary</strong><span>ICA English Higher Secondary School · May 2005</span></div>
+          <div class="edu"><strong>High School</strong><span>ICA English Higher Secondary School · May 2003</span></div>
+        </section>
+
+        <section class="side-section">
+          <h2 class="side-title">Volunteering</h2>
+          <div class="edu"><strong>Dubai Cares &amp; Emirates NBD Exchanges</strong><span>Volunteer · 7 years</span></div>
+        </section>
+
+        <section class="side-section">
+          <h2 class="side-title">Connect</h2>
+          <div class="links">
+            <a class="link" href="mailto:raimu456@me.com"><span>Email</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4V6Zm0 1 8 6 8-6" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+            <a class="link" href="https://www.linkedin.com/in/raimu456/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 16 16 8m-6-1h7v7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="link" href="https://github.com/rahimpilot" target="_blank" rel="noopener noreferrer"><span>GitHub</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 16 16 8m-6-1h7v7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+          <div class="availability"><span class="status-dot" aria-hidden="true"></span>Open to IT support opportunities</div>
+        </section>
+
+        <section class="side-section">
+          <h2 class="side-title">Interests</h2>
+          <p class="interests">Blog writing · new technology and science · solo travel · movies</p>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="footer-note">
+      <span>PROFILE / RAHIM HAMZA</span>
+      <span>IT SUPPORT ENGINEER</span>
+    </footer>
+  </main>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const buttons = [...document.querySelectorAll('[data-theme-choice]')];
+      const media = window.matchMedia('(prefers-color-scheme: dark)');
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+      function activeTheme() {
+        return root.dataset.theme || (media.matches ? 'dark' : 'light');
+      }
+
+      function renderTheme() {
+        const current = activeTheme();
+        buttons.forEach((button) => {
+          button.setAttribute('aria-pressed', String(button.dataset.themeChoice === current));
+        });
+        themeMeta.setAttribute('content', current === 'dark' ? '#081116' : '#edf3f5');
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          root.dataset.theme = button.dataset.themeChoice;
+          renderTheme();
+        });
+      });
+
+      media.addEventListener?.('change', () => {
+        if (!root.dataset.theme) renderTheme();
+      });
+
+      renderTheme();
+    })();
+  </script>
+</body>
+</html>

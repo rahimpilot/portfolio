@@ -6,6 +6,7 @@
     "NODE_OPTIONS": "--openssl-legacy-provider"
   },
   "rewrites": [
+    { "source": "/", "destination": "/resume.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
