@@ -17,7 +17,7 @@ export default function Home() {
               Elevating customer trust through <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">reliable support systems</span>.
             </h1>
             <p className="text-lg md:text-xl leading-relaxed text-slate-600 mb-8 max-w-2xl">
-              16+ years strengthening resolution speed, platform reliability and user satisfaction across multi-channel environments.
+              From macOS support to enterprise service desks — delivering reliable, SLA-driven IT support across India and Canada.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a href="#contact" className="px-6 py-3 rounded-lg bg-slate-900 text-white font-medium shadow-sm hover:shadow-md hover:bg-slate-800 transition">Get in touch</a>
@@ -34,10 +34,10 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-6 -mt-10 mb-20 relative">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { label: 'Tickets Resolved', value: '12k+' },
-            { label: 'Avg First Response', value: '< 15 min' },
-            { label: 'CSAT Satisfaction', value: '97%' },
-            { label: 'Platforms Supported', value: 'Windows · macOS · Linux' }
+            { label: 'Platforms Supported', value: 'Windows · macOS · Linux' },
+            { label: 'Ticketing Systems', value: 'ServiceNow · Jira · Zendesk' },
+            { label: 'Networking', value: 'IP · DNS · DHCP' },
+            { label: 'Based In', value: 'Kitchener, Canada' }
           ].map(kpi => (
             <div key={kpi.label} className="rounded-xl bg-white border border-slate-200 p-5 shadow-sm hover:shadow-md transition">
               <div className="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-2">{kpi.label}</div>
@@ -52,15 +52,14 @@ export default function Home() {
         <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-10">Experience</h2>
         <div className="space-y-8">
           <ExperienceCard
-            role="Technical Customer Service"
+            role="IT Support Engineer"
             company="OPENLANE Canada"
             period="Oct 2024 – Present"
             color="border-blue-500"
             bullets={[
-              'Improved multi-channel resolution flow; reduced average handling time via structured triage.',
-              'Troubleshot platform & website issues, documenting root causes for faster recurrence handling.',
-              'Integrated findings into Salesforce notes to streamline cross-team escalation quality.',
-              'Identified repeating patterns and proposed process adjustments (knowledge base updates).'
+              'Provide Tier 1/2 incident support through Active Directory, Okta, and ServiceNow, meeting SLA targets.',
+              'Support remote Windows and macOS users: VPN/Wi-Fi connectivity, RBAC access, and remote-management troubleshooting.',
+              'Deploy and maintain laptops, printers, and peripherals; manage MDM enrolment and SIM activation.'
             ]}
           />
           <ExperienceCard
@@ -69,10 +68,9 @@ export default function Home() {
             period="Nov 2023 – Sep 2024"
             color="border-indigo-500"
             bullets={[
-              'Delivered first-line network connectivity troubleshooting with consistent SLA adherence.',
-              'Optimized ticket routing automation; improved queue efficiency.',
-              'Guided end users on self-serve portal adoption to reduce inbound load.',
-              'Monitored performance indicators and escalated anomalies promptly.'
+              'Troubleshot internet, router, and modem issues for residential customers.',
+              'Handled plan changes, upgrades, and new service setups; kept customers informed during outages.',
+              'Logged and tracked cases and tickets, guided customers on self-serve options, and escalated complex issues.'
             ]}
           />
           <ExperienceCard
@@ -81,20 +79,19 @@ export default function Home() {
             period="Nov 2011 – Aug 2012"
             color="border-cyan-500"
             bullets={[
-              'Provided multi-channel incident response covering hardware, OS & network.' ,
-              'Maintained detailed ticket lifecycle documentation improving knowledge base accuracy.',
-              'Supported escalation pathways ensuring minimal downtime for end users.'
+              'Provided phone, email, and in-person support for hardware, software, and network issues.',
+              'Logged and tracked tickets, performed installations, and escalated unresolved issues.',
+              'Set up new employees and documented solutions in the knowledge base.'
             ]}
           />
           <ExperienceCard
-            role="Technical Support Advisor (Apple Mac)"
+            role="Technical Support Advisor (Apple Macintosh)"
             company="Aditya Birla Minacs"
             period="Jan 2008 – Feb 2009"
             color="border-emerald-500"
             bullets={[
-              'Diagnosed macOS faults & executed recovery / reinstallation procedures.',
-              'Managed backup & restore operations ensuring data continuity.',
-              'Delivered user environment setup & connectivity troubleshooting.'
+              'Supported macOS: OS reinstallation, backups and restores, app installation, and ASR/Recovery Console.',
+              'Troubleshot LAN/WLAN connectivity and scheduled Apple service appointments.'
             ]}
           />
         </div>
@@ -107,18 +104,18 @@ export default function Home() {
           <div className="space-y-6">
             <SkillBar skill="Troubleshooting & Problem Solving" level={90} />
             <SkillBar skill="Windows / macOS / Linux" level={85} />
-            <SkillBar skill="Networking Fundamentals" level={80} />
-            <SkillBar skill="Ticketing (Salesforce)" level={75} />
-            <SkillBar skill="Application Support" level={80} />
+            <SkillBar skill="Networking (IP · DNS · DHCP)" level={80} />
+            <SkillBar skill="Ticketing (ServiceNow / Jira / Zendesk)" level={80} />
+            <SkillBar skill="Microsoft Office & Software Installation" level={80} />
           </div>
           <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-8 shadow-sm">
             <h3 className="text-xl font-semibold text-slate-900 mb-4">Core Focus Areas</h3>
             <ul className="space-y-3 text-sm text-slate-600 list-disc ml-5">
-              <li>Systematic root cause analysis & documentation</li>
-              <li>Multi-channel support optimization & workflow triage</li>
-              <li>Knowledge base enrichment & process refinement</li>
-              <li>Cross-team communication & escalation clarity</li>
-              <li>User experience empathy & retention mindset</li>
+              <li>SLA-driven incident response & escalation clarity</li>
+              <li>Systematic root-cause analysis & documentation</li>
+              <li>Remote Windows/macOS support & device deployment</li>
+              <li>Knowledge-base enrichment & process refinement</li>
+              <li>Clear, empathetic user communication</li>
             </ul>
           </div>
         </div>
@@ -127,15 +124,16 @@ export default function Home() {
       {/* Education & Volunteering */}
       <section className="max-w-6xl mx-auto px-6 mb-24 grid gap-10 md:grid-cols-3" id="about">
         <InfoPanel title="Education" items={[
-          'Bachelor – Alagappa University (WES Accredited)',
-          'Higher Secondary – ICA School'
+          "Bachelor's — Alagappa University, WES Accredited (2012)",
+          'Higher Secondary — ICA English Higher Secondary School, India (2005)',
+          'High School — ICA English Higher Secondary School, India (2003)'
         ]} />
         <InfoPanel title="Volunteering" items={[
-          'Dubai Cares & Emirates NBD (7 yrs)',
+          'Dubai Cares & Emirates NBD exchanges (7 yrs)',
           'FIFA World Cup 2026 (Enrolled)'
         ]} />
         <InfoPanel title="Interests" items={[
-          'Technology research', 'Technical writing', 'Solo travel', 'Cinema'
+          'Writing blogs', 'Learning new technology & science', 'Solo travel', 'Cinema'
         ]} />
       </section>
 
